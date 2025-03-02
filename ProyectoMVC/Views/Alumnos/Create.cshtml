@@ -11,7 +11,9 @@
   </ol>
 </nav>
 <form asp-action="Create" asp-controller="Alumnos" method="POST">
-    <div asp-validation-summary="All" class="alert alert-danger"></div>
+    <div asp-validation-summary="All">
+        <i class="bi bi-exclamation-triangle-fill"></i>
+    </div>
 
     <div class="input-group mb-3">
    <span class="input-group-text" id="basic-addon1"><span class="fas fa-user"></span></span>
@@ -20,11 +22,11 @@
 
  <div class="input-group mb-3">
    <span class="input-group-text" id="basic-addon1"><span class="fas fa-user"></span></span>
-   <input type="text" class="form-control" asp-for="Apellidos" placeholder="Escriba los apellidos del alumno" aria-label="Apellido">
+   <input type="text" class="form-control" asp-for="Apellidos" placeholder="Apellidos" aria-label="Apellidos">
 </div>
  <div class="input-group mb-3">
    <span class="input-group-text" id="basic-addon1"><span class="fas fa-list"></span></span>
-   <input type="number" class="form-control" asp-for="Edad" placeholder="Edad" aria-label="Edad">
+   <input type="number" class="form-control" asp-for="Edad" value="@((Model.Edad == 0)? string.Empty : Model.Edad)" placeholder="Edad" aria-label="Edad">
 </div>
  <div class="input-group mb-3">
    <span class="input-group-text" id="basic-addon1"><span class="fas fa-list"></span></span>
@@ -32,11 +34,11 @@
 </div>
  <div class="input-group mb-3">
    <span class="input-group-text" id="basic-addon1"><span class="fas fa-hashtag"></span></span>
-   <input type="number" class="form-control" asp-for="CantidadMaterias" placeholder="Cantidad de Materias" aria-label="CantidadMaterias">
+   <input type="number" class="form-control" asp-for="CantidadMaterias" value="@((Model.CantidadMaterias == 0)? string.Empty : Model.CantidadMaterias)" placeholder="Cantidad de Materias" aria-label="CantidadMaterias">
 </div>
 <div class="input-group mb-3">
    <span class="input-group-text" id="basic-addon1"><span class="fas fa-hashtag"></span></span>
-   <input type="number" class="form-control" asp-for="Ciclo" placeholder="Ciclo" aria-label="Ciclo">
+   <input type="number" class="form-control" asp-for="Ciclo" value="@((Model.Ciclo == 0)? string.Empty : Model.Ciclo)" placeholder="Ciclo" aria-label="Ciclo">
 </div>
 <div class="input-group mb-3">
    <span class="input-group-text" id="basic-addon1"><span class="fas fa-calendar"></span></span>
