@@ -1,10 +1,22 @@
 ﻿@model List<Alumnos>;
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+        <a asp-controller ="Home" asp-action="Index">Home</a>
+        </li>
+        <li class="breadcrumb-item">Index</li>
+  </ol>
+</nav>
+
 <div class="container">
     <div class="row">
-        <div class="col-xl-12 col-md-12 col-sm-12">
-            <table class"table table-hover">
+        <div class="col-xl-12 col-md-12 col-sm-12 d-flex justify-content-start">
+            <a type="button" class="btn btn-primary" asp-action="Create" asp-controller="Alumnos"><span class="fas fa-plus"></span>Agregar</a>
+             </div>
+            <div class="col-xl-12 col-md-12 col-sm-12 mt-5">
+            <table class="table table-hover">
                 <thead>
-                    <th>ID</th>
+                    <th>Id</th>
                     <th>Nombres</th>
                     <th>Apellidos</th>
                 </thead>

@@ -12,21 +12,37 @@ namespace ProyectoMVC.Models
         [Key]
         public int AlumnoId { get; set; }
         [NotNull]
+        [Required(ErrorMessage = "Name es requerido.")]
         public string Nombres { get; set; }
         [NotNull]
+        [Required(ErrorMessage = "Apellido es requerido.")]
         public string Apellidos { get; set; }
         [NotNull]
+        [Required(ErrorMessage = "Edad es requerido.")]
         public int Edad { get; set; }
         [NotNull]
-        public required string Carnet { get; set; }
-        public int CantidadMaterias { get; set; }
-        public int Ciclo { get; set; }
+        [Required(ErrorMessage = "Carnet es requerido.")]
+        public  string Carnet { get; set; }
+        [NotNull]
+        [Required(ErrorMessage = "Materias es requeridod.")]
+        public int? CantidadMaterias { get; set; }
+        [Required(ErrorMessage = "Ciclo es requerido.")]
+        public int? Ciclo { get; set; }
+        [Required(ErrorMessage = "FechaNacimiento es requerido.")]
         public DateTime FechaNacimiento { get; set; }
         [NotMapped]
-        public string NombreCompleto { get; set; }
+        public string? NombreCompleto { get; set; }
         #endregion Propiedades
 
         #region Constructor
+        public Alumnos()
+        {
+            FechaNacimiento = DateTime.Now.Date;
+            IsActive = true;
+            Created = DateTime.Now;
+            CreatedBy = "ADMIN";
+
+        }
         public Alumnos(string nombres, string apellidos, int edad, DateTime fechaNacimiento)
         {
             Nombres = nombres;
